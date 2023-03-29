@@ -11,6 +11,8 @@
 		C443B29829D3356A00229737 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C443B29729D3356A00229737 /* ContentView.swift */; };
 		C443B29A29D3356C00229737 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C443B29929D3356C00229737 /* Assets.xcassets */; };
 		C443B29D29D3356C00229737 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C443B29C29D3356C00229737 /* Preview Assets.xcassets */; };
+		C443B2A429D3D2F100229737 /* NavigationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C443B2A329D3D2F100229737 /* NavigationExtension.swift */; };
+		C443B2A629D3D48400229737 /* CustomRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C443B2A529D3D48400229737 /* CustomRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		C443B29729D3356A00229737 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C443B29929D3356C00229737 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C443B29C29D3356C00229737 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C443B2A329D3D2F100229737 /* NavigationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationExtension.swift; sourceTree = "<group>"; };
+		C443B2A529D3D48400229737 /* CustomRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				C443B29529D3356A00229737 /* Test_AddScreenApp.swift */,
 				C443B29729D3356A00229737 /* ContentView.swift */,
+				C443B2A529D3D48400229737 /* CustomRowView.swift */,
+				C443B2A329D3D2F100229737 /* NavigationExtension.swift */,
 				C443B29929D3356C00229737 /* Assets.xcassets */,
 				C443B29B29D3356C00229737 /* Preview Content */,
 			);
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C443B2A629D3D48400229737 /* CustomRowView.swift in Sources */,
 				C443B29829D3356A00229737 /* ContentView.swift in Sources */,
 				C443B29629D3356A00229737 /* Test_AddScreenApp.swift in Sources */,
+				C443B2A429D3D2F100229737 /* NavigationExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

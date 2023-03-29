@@ -5,6 +5,8 @@
 //  Created by Tom Flahive on 3/28/23.
 //
 
+// 1. Add code from SwiftLee to navigate to screen when info button is clicked.
+
 import SwiftUI
 
 struct ListItem: Identifiable {
@@ -12,36 +14,11 @@ struct ListItem: Identifiable {
     let title: String
 }
 
-struct CustomRowView: View {
-    let item: ListItem
-    var onInfoButtonTap: (() -> Void)?
-    var onRowTap: (() -> Void)?
-
-    var body: some View {
-        HStack {
-            Text(item.title)
-                .font(.headline)
-            
-            Spacer()
-            
-            Button(action: {
-                onInfoButtonTap?()
-            }) {
-                Image(systemName: "info.circle")
-                    .foregroundColor(.blue)
-            }
-            .buttonStyle(BorderlessButtonStyle())
-        }
-        .contentShape(Rectangle())
-        .onTapGesture {
-            onRowTap?()
-        }
-    }
-}
-
-
-
 struct ContentView: View {
+    
+    @State var selectedFavorite: String?
+    @State private var expandedRow: UUID?
+    
     let items: [ListItem] = [
         ListItem(title: "Item 1"),
         ListItem(title: "Item 2"),
@@ -53,11 +30,26 @@ struct ContentView: View {
             List(items) { item in
                 CustomRowView(item: item, onInfoButtonTap: {
                     print("Info button tapped for \(item.title)")
+                    selectedFavorite = item.title
                 }, onRowTap: {
+                    if expandedRow == item.id {
+                        expandedRow = nil
+                    } else {
+                        expandedRow = item.id
+                    }
                     print("Row tapped for \(item.title)")
                 })
+                if expandedRow == item.id {
+                    Text(item.id.uuidString)
+                        .background(Color.green)
+                    //DetailView()
+                        //.transition(.slide)
+                        //.animation(.easeInOut(duration: 1), value: expandedRow)
+                }
             }
-            .navigationBarTitle("List with Info Buttons")
+            .navigationDestination(for: $selectedFavorite) { item in
+                Text(item)
+            }
         }
     }
 }
